@@ -27,8 +27,8 @@ Please note that this tool is suitable for renderings where:
 1. Go to the folder you want to place the tool and get in your terminal, (all the commands below are runned in the terminal!)
 2. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/minecraft-wallpaper-replacement.git
-   cd minecraft-wallpaper-replacement
+   git clone https://github.com/olozhika/Minecraft_Wallpaper_Replacer.git
+   cd Minecraft_Wallpaper_Replacer
    ```
 3. Make sure you have python and pip installed
 4. install the requirements
@@ -72,4 +72,6 @@ both the instructions and the files are to be updated
 Be patient! Of cource **there will be more templates**, maybe in a few weeks?
 
 ______
+Plz star the repo if you find the tool useful :D
+
 By olozhika (olozhika472 in Minecraft)
