@@ -10,6 +10,8 @@ Enhance your Minecraft wallpapers with this convenient Python tool. Quickly swap
 
 - **Customizability:** Apply your favorite skin to Minecraft wallpapers, making your wallpaper truly unique.
 
+- **Have eyes!:** The tool allows for easy rendering of eyes through RGB colors, enhancing the visual appeal of the minecraft renderings. 
+
 - **Suitable for Minecraft and Beyond:** While initially designed for Minecraft wallpapers, the same principle applies to other renderings, provided they meet the preparation requirements.
 
 ## Prerequisites
@@ -18,6 +20,7 @@ Please note that this tool is suitable for renderings where:
 
 - Each pixel in Original Texture (the texture to be changed) has a unique color.
 - Renderings are created with layered rendering techniques.
+  - bcz we need the **material_color_map** to change textures!
 
 ## Installation
 
@@ -37,9 +40,11 @@ Please note that this tool is suitable for renderings where:
 
 1. Right click and open the `eye_color_player.py` as a txt file, change the RGB colors within. Save the file. 
 2. Make sure you can find the following folders or paths
-   - the wallpaper templates
+   - the wallpaper templates folder
    - the output folder
+     - *the folder will be automatically created if the path doesn't exist*
    - your skin
+     - *note that the tool currently only support 64x64 skins*
 3. In the terminal, fill the paths/folders below and run
    ```bash
    python Run_MCR.py --wallpaper_path= --output_path= --yourskin=
