@@ -1,5 +1,7 @@
 # Minecraft Wallpaper Replacer
 
+![image](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/assets/37537943/aec1299d-bf21-47a7-bacf-85a7e410b4d3)
+
 Enhance your Minecraft wallpapers with this convenient Python tool. Quickly swap skin texture to give your creations a unique look.
 
 ## Features
@@ -51,8 +53,18 @@ Please note that this tool is suitable for renderings where:
    one will get
    ![image](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/assets/37537943/32a1b86f-dc42-4c85-a5ee-4d20759625f9)
    these files in the `output/olozhika` folder.
-   And the final image looks like this
+   And the final image looks like the one maked with blue. 
    
    
 ## Creating wallpaper templates
 
+both the instructions and the files are to be updated
+
+## Wait... No more wallpapers?
+
+*Wait, so there is only one template for us to test on?*
+
+Be patient! Of cource **there will be more templates**, maybe in a few weeks?
+
+______
+By olozhika (olozhika472 in Minecraft)
