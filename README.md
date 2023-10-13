@@ -1,6 +1,6 @@
 # Minecraft Wallpaper Replacer
 
-![image](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/assets/37537943/aec1299d-bf21-47a7-bacf-85a7e410b4d3)
+![before_and_after](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/blob/main/Images_used_in_README/snap2023-10-13%20110459.png)
 
 Enhance your Minecraft wallpapers with this convenient Python tool. Quickly swap skin texture to give your creations a unique look.
 
@@ -56,7 +56,7 @@ Please note that this tool is suitable for renderings where:
    python Run_MCR.py --wallpaper_path='wallpaper/Rep_test/Alex_1eyes' --output_path='output/olozhika' --yourskin='tex/olozhika472_NMO.png'
    ```
    one will get
-   ![image](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/assets/37537943/32a1b86f-dc42-4c85-a5ee-4d20759625f9)
+   ![image](https://github.com/olozhika/Minecraft_Wallpaper_Replacer/blob/main/Images_used_in_README/snap2023-10-13%20111336.png)
    these files in the `output/olozhika` folder.
    And the final image looks like the one maked with blue. 
    
