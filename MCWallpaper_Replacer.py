@@ -150,7 +150,7 @@ def replace_eyes(highlighted_player_path, eyebrow_eye_color, want_eyebrow_eye_co
     # return修改后的渲染图
     highlighted_player.save(output_path)
 
-def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=100,edge_color=(255,255,255,255)):
+def edge_detection(input_path, output_path, lower_threshold=50, upper_threshold=200,edge_color=(255,255,255,255),dark_threshold=255,filling_area=0):
     # 读取输入图像（包含透明背景的PNG图像）
     image = cv2.imread(input_path, cv2.IMREAD_UNCHANGED)
 
@@ -161,11 +161,21 @@ def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=
     edges_r = cv2.Canny(r, lower_threshold, upper_threshold)
     edges_alpha = cv2.Canny(a, lower_threshold, upper_threshold)
 
+    # 填充深or浅区域
+    color_sum=np.int16(b)+np.int16(g)+np.int16(r)
+    dark = np.zeros_like(color_sum)
+    if filling_area!=0:                # filling_area控制是否填充 & 填充深or浅区域, =0则不填充
+        if filling_area==-1:           # 填充深色区域
+            dark = color_sum<dark_threshold
+        elif filling_area==1:          # 填充浅色区域
+            dark = color_sum>dark_threshold
+        dark=np.array(dark)*np.array(a!=0)
+
     # 创建一个具有相同尺寸的透明背景的图像
     result = np.zeros_like(image)
 
-    # 将检测到的边缘部分设为白色
-    for edges in (edges_alpha,edges_b,edges_g,edges_r):
+    # 将检测到的边缘及需要填充的部分设为白色
+    for edges in (edges_alpha,edges_b,edges_g,edges_r,dark):
         result[edges != 0] = np.array(edge_color)
 
     # 保存结果图像（具有透明背景）
@@ -244,7 +254,7 @@ def MCWallpaper_Replace(wallpaper_folder, outputfolder, your_skin, have_eyes=1, 
     add_background(full_player_path[2], background_path, full_image_path)
     # 边缘检测并保存输出图像
     for i in range(3):
-        edge_detection(full_player_path[i], edge_detection_path[i], lower_threshold=50, upper_threshold=100)
+        edge_detection(full_player_path[i], edge_detection_path[i], lower_threshold=50, upper_threshold=200, edge_color=(255,255,255,255), dark_threshold=255*1.0, filling_area=0)
     print('Done! Enjoy your wallpaper :D')
     print('##############################################')
     print('If you find this tool helpful, please consider')
@@ -254,5 +264,3 @@ def MCWallpaper_Replace(wallpaper_folder, outputfolder, your_skin, have_eyes=1, 
     print('##############################################')
     print('# MCWallpaper_Replacer, by olozhika472 #')
     print('https://github.com/olozhika/Minecraft_Wallpaper_Replacer')
-
-    
