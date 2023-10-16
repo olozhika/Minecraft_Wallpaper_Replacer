@@ -47,7 +47,7 @@ def highlight_player(mat_color_path, layer_alpha_path, output_path):
     
     layer_alpha.save(output_path)
 
-def replace_pixel(pixels_rgba,texture_a,texture_b):
+def replace_pixel0(pixels_rgba,texture_a,texture_b):
     width_a, height_a = texture_a.size
     r, g, b, a = pixels_rgba
     # 获取贴图A中对应像素的颜色
@@ -60,6 +60,20 @@ def replace_pixel(pixels_rgba,texture_a,texture_b):
                 # 更新highlighted_player中的像素颜色
                 return(new_color)
     return((0, 0, 0, 0))
+
+def replace_pixel(pixels_rgba, texture_a, texture_b):
+    # 将贴图A和B转换为NumPy数组，以便更快地操作
+    arr_a = np.array(texture_a)
+    arr_b = np.array(texture_b)
+
+    # 创建一个布尔掩码，标记颜色匹配的位置
+    mask = np.all(arr_a == pixels_rgba, axis=-1)
+    
+    if not np.any(mask):
+        return((0, 0, 0, 0))
+
+    new_texture = tuple(arr_b[np.where(mask)][0])
+    return(new_texture)
 
 def replace_texture(highlighted_player_path, texture_a_path, texture_b_path, output_path):
     highlighted_player = Image.open(highlighted_player_path).convert('RGBA')
