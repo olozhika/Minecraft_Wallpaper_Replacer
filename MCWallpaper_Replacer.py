@@ -166,7 +166,7 @@ def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=
 
     # 将检测到的边缘部分设为白色
     for edges in (edges_alpha,edges_b,edges_g,edges_r):
-        result[edges != 0, 3] = 255  # 255 表示完全不透明
+        result[edges != 0] = [255,255,255,255]
 
     # 保存结果图像（具有透明背景）
     cv2.imwrite(output_path, result)
