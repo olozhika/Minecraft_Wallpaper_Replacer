@@ -150,7 +150,7 @@ def replace_eyes(highlighted_player_path, eyebrow_eye_color, want_eyebrow_eye_co
     # return修改后的渲染图
     highlighted_player.save(output_path)
 
-def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=100):
+def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=100,edge_color=(255,255,255,255)):
     # 读取输入图像（包含透明背景的PNG图像）
     image = cv2.imread(input_path, cv2.IMREAD_UNCHANGED)
 
@@ -166,7 +166,7 @@ def edge_detection(input_path, output_path, lower_threshold=10, upper_threshold=
 
     # 将检测到的边缘部分设为白色
     for edges in (edges_alpha,edges_b,edges_g,edges_r):
-        result[edges != 0] = [255,255,255,255]
+        result[edges != 0] = np.array(edge_color)
 
     # 保存结果图像（具有透明背景）
     cv2.imwrite(output_path, result)
