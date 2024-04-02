@@ -65,11 +65,9 @@ Please note that this tool is suitable for renderings where:
 
 both the instructions and the files are to be updated
 
-## Wait... No more wallpapers?
+## Todo List
 
-*Wait, so there is only one template for us to test on?*
-
-Be patient! Of cource **there will be more templates**, maybe in a few weeks?
+speed up the code with `with ThreadPoolExecutor(max_workers=num_threads) as executor`
 
 ______
 Plz star the repo if you find the tool useful :D
