@@ -70,7 +70,7 @@ def replace_pixel(pixels_rgba, texture_a, texture_b):
     mask = np.all(arr_a == pixels_rgba, axis=-1)
     
     if not np.any(mask):
-        return((0, 0, 0, 0))
+        return(pixels_rgba)
 
     new_texture = tuple(arr_b[np.where(mask)][0])
     return(new_texture)
@@ -254,7 +254,7 @@ def MCWallpaper_Replace(wallpaper_folder, outputfolder, your_skin, have_eyes=1, 
     add_background(full_player_path[2], background_path, full_image_path)
     # 边缘检测并保存输出图像
     for i in range(3):
-        edge_detection(full_player_path[i], edge_detection_path[i], lower_threshold=50, upper_threshold=200, edge_color=(255,255,255,255), dark_threshold=255*1.0, filling_area=0)
+        edge_detection(full_player_path[i], edge_detection_path[i], lower_threshold=50, upper_threshold=200, edge_color=(255,255,255,255), dark_threshold=255*0.3,filling_area=0)
     print('Done! Enjoy your wallpaper :D')
     print('##############################################')
     print('If you find this tool helpful, please consider')
@@ -264,3 +264,5 @@ def MCWallpaper_Replace(wallpaper_folder, outputfolder, your_skin, have_eyes=1, 
     print('##############################################')
     print('# MCWallpaper_Replacer, by olozhika472 #')
     print('https://github.com/olozhika/Minecraft_Wallpaper_Replacer')
+
+    
