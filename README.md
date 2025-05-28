@@ -65,9 +65,6 @@ Please note that this tool is suitable for renderings where:
 
 both the instructions and the files are to be updated
 
-## Todo List
-
-speed up the code with `with ThreadPoolExecutor(max_workers=num_threads) as executor`
 
 ______
 Plz star the repo if you find the tool useful :D
