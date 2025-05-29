@@ -4,6 +4,9 @@
 
 Enhance your Minecraft wallpapers with this convenient Python tool. Quickly swap skin texture to give your creations a unique look.
 
+**ALSO SEE: https://github.com/lecal987/Minecraft_Wallpaper_Replacer/ (a pytorch speed-up version of this replacer)**
+
+
 ## Features
 
 - **One-Click Operation:** Easily replace the skin in your Minecraft wallpaper without the need for 3D design tools.
